@@ -28,7 +28,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 <span class="input-group-text bg-transparent border-end-0">
                     <i class="fas fa-search text-muted"></i>
                 </span>
-                <input type="text" class="form-control bg-transparent border-start-0 ps-0" placeholder="Search...">
+<input type="text" class="form-control bg-transparent border-start-0 ps-0" id="dashboardSearch" placeholder="Search activity...">
             </div>
             
             <!-- Right dropdowns -->
@@ -37,13 +37,13 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 <div class="dropdown">
                     <a class="btn btn-sm btn-outline-secondary" href="#" role="button" data-bs-toggle="dropdown">
                         <i class="fas fa-bell"></i>
-                        <span class="badge bg-danger rounded-pill ms-1">3</span>
+<span class="badge bg-danger rounded-pill ms-1" id="notifBadge">3</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
+<ul class="dropdown-menu dropdown-menu-end" id="notificationsList">
                         <li><h6 class="dropdown-header">Notifications</h6></li>
-                        <li><a class="dropdown-item" href="#">New order received</a></li>
-                        <li><a class="dropdown-item" href="#">Server maintenance</a></li>
-                        <li><a class="dropdown-item" href="#">Database backup completed</a></li>
+                        <li><a class="dropdown-item" href="#" data-notif-id="1">New order received</a></li>
+                        <li><a class="dropdown-item" href="#" data-notif-id="2">Server maintenance</a></li>
+                        <li><a class="dropdown-item" href="#" data-notif-id="3">Database backup completed</a></li>
                     </ul>
                 </div>
                 
@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 <p class="text-muted mb-0">Here's what's happening with your admin panel today.</p>
             </div>
             <div class="col-auto">
-                <button class="btn btn-primary btn-sm">
+<button class="btn btn-primary btn-sm" id="exportDashboard">
                     <i class="fas fa-download me-1"></i>Export Report
                 </button>
             </div>
@@ -132,7 +132,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 <div class="chart-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="mb-0"><i class="fas fa-chart-line me-2 text-primary"></i>Sales Overview</h5>
-                        <select class="form-select form-select-sm" style="max-width: 150px;">
+<select class="form-select form-select-sm" id="salesPeriod" style="max-width: 150px;">
                             <option>Last 6 Months</option>
                             <option>Last Year</option>
                             <option>Last 30 Days</option>
@@ -155,7 +155,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
         <div class="table-container">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h5 class="mb-0"><i class="fas fa-list me-2 text-success"></i>Recent Activity</h5>
-                <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+<button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#recentModal">View All</button>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover">

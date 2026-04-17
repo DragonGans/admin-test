@@ -40,7 +40,7 @@
 <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="sidebarOffcanvas">
     <div class="offcanvas-header border-0 bg-primary bg-opacity-25">
         <h5 class="offcanvas-title text-white">
-            <i class="fas fa-crown me-2"></i>Admin Pro
+            <i class="fas fa-crown me-2"></i>Admin Panel
         </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
